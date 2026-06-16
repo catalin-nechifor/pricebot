@@ -1,0 +1,40 @@
+{
+  "Okuma Custom Black Feeder": {
+    "best_price": 299.9,
+    "best_url": "https://claumarpescar.ro/mulineta-okuma-custom-black-feeder-5500.html?tag=okuma%20custom%20black%205000",
+    "best_price_timestamp": "2026-06-16T09:43:49",
+    "sites": [
+      {
+        "price": 314.99,
+        "url": "https://marelepescar.ro/mulineta-okuma-custom-black-feeder.html"
+      },
+      {
+        "price": 315.0,
+        "url": "https://www.totalfishing.ro/mulineta-feeder-okuma-custom-black-feeder-5500.html?_gl=1*1ebkxf0*_up*MQ..*_gs*MQ.."
+      },
+      {
+        "price": 299.9,
+        "url": "https://claumarpescar.ro/mulineta-okuma-custom-black-feeder-5500.html?tag=okuma%20custom%20black%205000"
+      }
+    ]
+  },
+  "Power Fighter Pro 5000": {
+    "best_price": 200.0,
+    "best_url": "https://www.totalfishing.ro/mulineta-team-feeder-by-dome-power-fighter-pro-5000.html",
+    "best_price_timestamp": "2026-06-16T09:43:49",
+    "sites": [
+      {
+        "price": 254.99,
+        "url": "https://marelepescar.ro/mulineta-team-feeder-by-dome-carp-fighter-pro.html"
+      },
+      {
+        "price": 200.0,
+        "url": "https://www.totalfishing.ro/mulineta-team-feeder-by-dome-power-fighter-pro-5000.html"
+      },
+      {
+        "price": 261.9,
+        "url": "https://claumarpescar.ro/mulineta-team-feeder-by-dome-carp-fighter-pro-5000.html"
+      }
+    ]
+  }
+}

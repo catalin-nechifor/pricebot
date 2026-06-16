@@ -1,0 +1,24 @@
+email:
+  smtp_server: smtp.gmail.com
+  smtp_port: 465
+  username: catalin.nec@gmail.com
+  app_password: eysg yrnb knby neak
+  recipient: catalin.nec@gmail.com
+
+products:
+  - name: Okuma Custom Black Feeder
+    size: "5500"
+    threshold: 250
+    urls:
+      - https://marelepescar.ro/mulineta-okuma-custom-black-feeder.html
+      - https://www.totalfishing.ro/mulineta-feeder-okuma-custom-black-feeder-5500.html?_gl=1*1ebkxf0*_up*MQ..*_gs*MQ..
+      - https://claumarpescar.ro/mulineta-okuma-custom-black-feeder-5500.html?tag=okuma%20custom%20black%205000
+
+  - name: Power Fighter Pro 5000
+    threshold: 180
+    size: "5000"
+    urls:
+      - https://marelepescar.ro/mulineta-team-feeder-by-dome-carp-fighter-pro.html
+      - https://www.totalfishing.ro/mulineta-team-feeder-by-dome-power-fighter-pro-5000.html
+      - https://claumarpescar.ro/mulineta-team-feeder-by-dome-carp-fighter-pro-5000.html
+      
