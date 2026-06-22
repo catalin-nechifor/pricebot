@@ -102,7 +102,7 @@ def main():
     timestamp = datetime.now().isoformat(timespec="seconds")
 
     report = []
-    send_alert = False
+    send_alert = True
 
     for p in cfg["products"]:
         name = p["name"]
