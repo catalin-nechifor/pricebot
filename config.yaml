@@ -5,6 +5,9 @@ email:
   app_password: eysg yrnb knby neak
   recipient: catalin.nec@gmail.com
 
+discord:
+  webhook_url: https://discord.com/api/webhooks/1522497249983074385/WkbBJMftyBYRbhytwQvxt3x8Y1EUgxPgYIayS9SBOqkH2p6n9EbdUjyRBlNmAvsjRo5c
+
 products:
   - name: Okuma Custom Black Feeder
     size: "5500"

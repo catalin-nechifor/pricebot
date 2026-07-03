@@ -93,16 +93,39 @@ def send_email(cfg, subject, body):
         smtp.send_message(msg)
 
 
+def send_discord(webhook_url, subject, body):
+    if not webhook_url:
+        return
+
+    # Discord accepts up to 2000 chars in a single message.
+    content = f"**{subject}**\n{body}"
+    if len(content) > 2000:
+        content = content[:1990] + "\n..."
+
+    try:
+        r = requests.post(
+            webhook_url,
+            json={"content": content},
+            timeout=20
+        )
+        if r.status_code not in (200, 204):
+            print(f"ERROR discord webhook: {r.status_code} {r.text}")
+    except Exception as e:
+        print(f"ERROR discord webhook: {e}")
+
+
 # ---------------- MAIN ----------------
 
 def main():
     cfg = load_config()
+    discord_webhook_url = cfg.get("discord", {}).get("webhook_url")
     old = load_prices()
     new = {}
     timestamp = datetime.now().isoformat(timespec="seconds")
 
     report = []
     send_alert = True
+    lower_found = False
 
     for p in cfg["products"]:
         name = p["name"]
@@ -145,15 +168,26 @@ def main():
         old_best = old.get(name, {}).get("best_price")
 
         if old_best and best_price < old_best:
-            send_alert = True
             report.append(f"  changed: {old_best} -> {best_price}\n")
+            lower_found = True
+
+        else:
+            report.append("  no change\n")
 
     # ---------------- save ----------------
     save_prices(new)
 
     # ---------------- email ----------------
-    if send_alert:
-        send_email(cfg, "PriceBot update", "\n".join(report))
+    if lower_found and send_alert:
+        subject = "PriceBot update (lower price found)"
+        body = "\n".join(report)
+        send_email(cfg, subject, body)
+        send_discord(discord_webhook_url, subject, body)
+    else:
+        subject = "PriceBot update (same price)"
+        body = "\n".join(report)
+        send_email(cfg, subject, body)
+        send_discord(discord_webhook_url, subject, body)
 
     print("\n".join(report))
 
